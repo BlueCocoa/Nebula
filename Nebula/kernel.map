@@ -1,0 +1,359 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+initsys          0x0000000000008000 0x0000000000100000
+kernel           0x00000000f0000000 0x0000000004000000
+data             0x00000000c0000000 0x0000000000100000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+.init           0x0000000000008000      0x210
+ objects/start.o(.init* .data* .bss* .rodata*)
+ .data          0x0000000000008000        0x0 objects/start.o
+ .bss           0x0000000000008000        0x0 objects/start.o
+ .init          0x0000000000008000       0x38 objects/start.o
+                0x0000000000008000                _start
+ objects/initsys.o(.text* .data* .bss* .rodata*)
+ .text          0x0000000000008038      0x1d8 objects/initsys.o
+                0x0000000000008038                createPageTables
+ .data          0x0000000000008210        0x0 objects/initsys.o
+ .bss           0x0000000000008210        0x0 objects/initsys.o
+                0x0000000000009000                kernel_load = ALIGN (0x1000)
+
+.text           0x00000000f0009000     0x3170 load address 0x0000000000009000
+ objects/start.o(.high)
+ objects/start.o(.system-wide)
+ .system-wide   0x00000000f0009000       0x18 objects/start.o
+                0x00000000f0009000                wait_op
+                0x00000000f0009004                waitAF
+ *(.text*)
+ .text          0x00000000f0009018        0x0 objects/start.o
+ .text          0x00000000f0009018      0x168 objects/CPU.o
+                0x00000000f0009018                raspberryPi::CPU::CPUID()
+                0x00000000f0009024                raspberryPi::CPU::enableL1DataCache()
+                0x00000000f0009038                raspberryPi::CPU::enableFPU()
+                0x00000000f0009058                raspberryPi::CPU::enableMMU()
+                0x00000000f00090d0                raspberryPi::CPU::MMU(bool)
+                0x00000000f00090e8                raspberryPi::CPU::enableCore(unsigned int)
+                0x00000000f00090fc                raspberryPi::CPU::enableMultiCore()
+                0x00000000f0009100                raspberryPi::CPU::setClockRate(unsigned int, bool)
+                0x00000000f0009154                raspberryPi::CPU::clockRate()
+                0x00000000f000917c                raspberryPi::CPU::invalidateL1DataCache()
+ .text          0x00000000f0009180      0x1c0 objects/Clocks.o
+                0x00000000f0009180                raspberryPi::Clocks::state(raspberryPi::Clocks::clock_t)
+                0x00000000f00091b4                raspberryPi::Clocks::setState(raspberryPi::Clocks::clock_t, unsigned int)
+                0x00000000f00091ec                raspberryPi::Clocks::enable(raspberryPi::Clocks::clock_t)
+                0x00000000f0009200                raspberryPi::Clocks::disable(raspberryPi::Clocks::clock_t)
+                0x00000000f0009218                raspberryPi::Clocks::rate(raspberryPi::Clocks::clock_t, raspberryPi::Clocks::rate_t)
+                0x00000000f0009284                raspberryPi::Clocks::setRate(raspberryPi::Clocks::clock_t, unsigned int, bool)
+                0x00000000f00092c0                raspberryPi::Clocks::turbo(raspberryPi::Clocks::clock_t)
+                0x00000000f00092f4                raspberryPi::Clocks::setTurbo(raspberryPi::Clocks::clock_t, unsigned int)
+ .text          0x00000000f0009340      0x170 objects/DMA.o
+                0x00000000f0009340                raspberryPi::DMA::enableEngine(unsigned int)
+                0x00000000f0009370                raspberryPi::DMA::reset(unsigned int)
+                0x00000000f00093a0                raspberryPi::DMA::set(unsigned int, bool)
+                0x00000000f00093dc                raspberryPi::DMA::clearInterrupt(unsigned int)
+                0x00000000f000940c                raspberryPi::DMA::clearEnd(unsigned int)
+                0x00000000f000943c                raspberryPi::DMA::memcpy(unsigned int*, unsigned int*, unsigned int, unsigned int)
+                0x00000000f0009474                raspberryPi::DMA::sendDMARequest(CB*, unsigned int)
+ .text          0x00000000f00094b0      0xf3c objects/EMMC.o
+                0x00000000f00094b0                raspberryPi::EMMC::clockDivider(unsigned int)
+                0x00000000f000956c                raspberryPi::EMMC::setClock(unsigned int)
+                0x00000000f00096ec                raspberryPi::EMMC::sendCommandEMMC(unsigned int, unsigned int, unsigned int)
+                0x00000000f0009b84                raspberryPi::EMMC::handleInterrupts()
+                0x00000000f0009c04                raspberryPi::EMMC::sendCommandSD(unsigned int, unsigned int, unsigned int)
+                0x00000000f0009d4c                raspberryPi::EMMC::handleCardInterrupt()
+                0x00000000f0009dfc                raspberryPi::EMMC::resetCMD()
+                0x00000000f0009ea8                raspberryPi::EMMC::setBlockSize(unsigned int)
+                0x00000000f0009ee0                raspberryPi::EMMC::reset()
+                0x00000000f000a010                raspberryPi::EMMC::isSDCardInserted()
+                0x00000000f000a018                raspberryPi::EMMC::version()
+                0x00000000f000a030                raspberryPi::EMMC::init()
+ .text          0x00000000f000a3ec        0xc objects/Filesystem.o
+                0x00000000f000a3ec                raspberryPi::Filesystem::initOnBoardSDCard(raspberryPi::Filesystem::filesystem_type_t)
+ .text          0x00000000f000a3f8      0x180 objects/GPIO.o
+                0x00000000f000a3f8                raspberryPi::GPIO::setFunction(unsigned int, raspberryPi::GPIO::function_t)
+                0x00000000f000a458                raspberryPi::GPIO::set(unsigned int, bool)
+                0x00000000f000a4a4                raspberryPi::GPIO::pull(unsigned int, raspberryPi::GPIO::pull_t, bool)
+                0x00000000f000a4f0                raspberryPi::GPIO::detectEvent(unsigned int, raspberryPi::GPIO::GPIO_event_t)
+                0x00000000f000a530                raspberryPi::GPIO::level(unsigned int)
+ .text          0x00000000f000a578      0xffc objects/Graphics.o
+                0x00000000f000a578                raspberryPi::Graphics::lockFoucs()
+                0x00000000f000a5c4                raspberryPi::Graphics::unlockFoucs()
+                0x00000000f000a608                raspberryPi::Graphics::loadFrameBuffer(unsigned int*)
+                0x00000000f000a684                raspberryPi::Graphics::drawPixel(unsigned int, unsigned int, unsigned int)
+                0x00000000f000a818                raspberryPi::Graphics::sync()
+                0x00000000f000a888                raspberryPi::Graphics::clear(unsigned int)
+                0x00000000f000aa64                raspberryPi::Graphics::resolution(unsigned int*, unsigned int*, unsigned int)
+                0x00000000f000ab18                raspberryPi::Graphics::pixelOrder()
+                0x00000000f000ab28                raspberryPi::Graphics::detectPixelOrder()
+                0x00000000f000ab78                raspberryPi::Graphics::init(unsigned int, unsigned int, unsigned int, bool)
+                0x00000000f000ad54                raspberryPi::Graphics::setPixelOrder(raspberryPi::Graphics::pixel_order_t)
+                0x00000000f000ad64                raspberryPi::Graphics::Console::lineFeed()
+                0x00000000f000ae08                raspberryPi::Graphics::Console::logc(char)
+                0x00000000f000b28c                raspberryPi::Graphics::Console::log(char const*)
+                0x00000000f000b414                raspberryPi::Graphics::Console::logHexString(unsigned int)
+                0x00000000f000b450                raspberryPi::Graphics::Console::logHexStringLine(unsigned int)
+                0x00000000f000b460                cursorBackspace()
+                0x00000000f000b4ac                raspberryPi::Graphics::Console::backspace()
+                0x00000000f000b4c8                raspberryPi::Graphics::Console::clear()
+                0x00000000f000b4ec                raspberryPi::Graphics::Console::nls(raspberryPi::Graphics::Console::nlt_t, char const*)
+ .text          0x00000000f000b574      0x1a8 objects/Mailbox.o
+                0x00000000f000b574                raspberryPi::Mailbox::write(unsigned int, unsigned int)
+                0x00000000f000b5ec                raspberryPi::Mailbox::read(unsigned int)
+                0x00000000f000b660                raspberryPi::Mailbox::property(raspberryPi::Mailbox::property_t, unsigned int*)
+ .text          0x00000000f000b71c      0x200 objects/Memory.o
+                0x00000000f000b71c                raspberryPi::Memory::barrier()
+                0x00000000f000b730                raspberryPi::Memory::addressToPhysical(unsigned int)
+                0x00000000f000b7c4                raspberryPi::Memory::addressToVirtual(unsigned int)
+                0x00000000f000b7cc                raspberryPi::Memory::memclr(void*, unsigned int)
+                0x00000000f000b838                raspberryPi::Memory::memcpy(unsigned int*, unsigned int*, unsigned int)
+                0x00000000f000b860                raspberryPi::Memory::memmove(void*, void const*, unsigned int)
+ .text          0x00000000f000b91c        0xc objects/OS.o
+                0x00000000f000b91c                os_irq_handler
+ .text          0x00000000f000b928      0x140 objects/Power.o
+                0x00000000f000b928                raspberryPi::Power::state(raspberryPi::Power::device_id_t)
+                0x00000000f000b95c                raspberryPi::Power::setState(raspberryPi::Power::device_id_t, unsigned int)
+                0x00000000f000b994                raspberryPi::Power::timing(raspberryPi::Power::device_id_t)
+                0x00000000f000b9c8                raspberryPi::Power::enable(raspberryPi::Power::device_id_t, bool)
+                0x00000000f000ba18                raspberryPi::Power::disable(raspberryPi::Power::device_id_t, bool)
+ .text          0x00000000f000ba68       0x38 objects/Timer.o
+                0x00000000f000ba68                raspberryPi::Timer::init()
+                0x00000000f000ba94                raspberryPi::Timer::tick()
+ .text          0x00000000f000baa0      0x2c4 objects/UART.o
+                0x00000000f000baa0                raspberryPi::UART::init(unsigned int)
+                0x00000000f000bbac                raspberryPi::UART::check()
+                0x00000000f000bbc4                raspberryPi::UART::readByte()
+                0x00000000f000bbf0                raspberryPi::UART::readUntil(char*, char)
+                0x00000000f000bc2c                raspberryPi::UART::readLine(char*)
+                0x00000000f000bc34                raspberryPi::UART::writeByte(unsigned int)
+                0x00000000f000bc64                raspberryPi::UART::write(char const*)
+                0x00000000f000bc94                raspberryPi::UART::writeLine(char const*)
+                0x00000000f000bcb0                raspberryPi::UART::writeByAddress(unsigned int)
+                0x00000000f000bd0c                raspberryPi::UART::writeHexString(unsigned int)
+                0x00000000f000bd48                raspberryPi::UART::writeHexStringLine(unsigned int)
+ .text          0x00000000f000bd64        0x4 objects/USB.o
+                0x00000000f000bd64                raspberryPi::USB::init()
+ .text          0x00000000f000bd68      0x108 objects/Voltage.o
+                0x00000000f000bd68                raspberryPi::Voltage::voltage(raspberryPi::Voltage::voltage_id_t, raspberryPi::Voltage::voltage_t)
+                0x00000000f000bdd4                raspberryPi::Voltage::setVoltage(raspberryPi::Voltage::voltage_id_t, unsigned int)
+                0x00000000f000be18                raspberryPi::Voltage::temperature(raspberryPi::Voltage::voltage_id_t, raspberryPi::Voltage::temperature_t)
+ .text          0x00000000f000be70       0x50 objects/divmod.o
+                0x00000000f000be70                div(unsigned int, unsigned int)
+                0x00000000f000be98                mod(unsigned int, unsigned int)
+ .text          0x00000000f000bec0       0x94 objects/main.o
+                0x00000000f000bec0                GET32
+                0x00000000f000bec8                PUT32
+                0x00000000f000bed0                kernel_start
+ .text          0x00000000f000bf54      0x1ec objects/raspberryPi.o
+                0x00000000f000bf54                raspberryPi::raspberryPiInit()
+                0x00000000f000c0cc                raspberryPi::clock()
+                0x00000000f000c0dc                raspberryPi::waits(unsigned int)
+                0x00000000f000c0fc                raspberryPi::reboot()
+                0x00000000f000c130                raspberryPi::halt()
+ .text          0x00000000f000c140       0x30 objects/string.o
+                0x00000000f000c140                strlen(char const*)
+
+.glue_7         0x00000000f000c170        0x0 load address 0x000000000000c170
+ .glue_7        0x0000000000000000        0x0 linker stubs
+
+.glue_7t        0x00000000f000c170        0x0 load address 0x000000000000c170
+ .glue_7t       0x0000000000000000        0x0 linker stubs
+
+.vfp11_veneer   0x00000000f000c170        0x0 load address 0x000000000000c170
+ .vfp11_veneer  0x0000000000000000        0x0 linker stubs
+
+.v4_bx          0x00000000f000c170        0x0 load address 0x000000000000c170
+ .v4_bx         0x0000000000000000        0x0 linker stubs
+
+.iplt           0x00000000f000c170        0x0 load address 0x000000000000c170
+ .iplt          0x0000000000000000        0x0 objects/start.o
+
+.rodata         0x00000000f000c170  0x34bccb4 load address 0x000000000000c170
+ *(.rodata*)
+ .rodata        0x00000000f000c170        0xc objects/CPU.o
+ .rodata        0x00000000f000c17c      0x200 objects/EMMC.o
+ .rodata.str1.4
+                0x00000000f000c37c      0x3a9 objects/EMMC.o
+                                        0x3ac (size before relaxing)
+ *fill*         0x00000000f000c725        0x3 
+ .rodata        0x00000000f000c728      0x3e0 objects/Graphics.o
+ .rodata.str1.4
+                0x00000000f000cb08       0xa1 objects/Graphics.o
+                                         0xa4 (size before relaxing)
+ *fill*         0x00000000f000cba9        0x3 
+ .rodata        0x00000000f000cbac       0x38 objects/Mailbox.o
+ .rodata.str1.4
+                0x00000000f000cbe4       0x51 objects/Mailbox.o
+                                         0x54 (size before relaxing)
+ *fill*         0x00000000f000cc35        0x3 
+ .rodata.str1.4
+                0x00000000f000cc38        0xd objects/OS.o
+                                         0x10 (size before relaxing)
+ *fill*         0x00000000f000cc45        0x3 
+ .rodata.str1.4
+                0x00000000f000cc48       0x5d objects/main.o
+                                         0x60 (size before relaxing)
+ *fill*         0x00000000f000cca5        0x3 
+ .rodata.str1.4
+                0x00000000f000cca8      0x17c objects/raspberryPi.o
+                0x00000000f000ce24                _frame_start = ABSOLUTE (.)
+ objects/start.o(.rawdata)
+ .rawdata       0x00000000f000ce24  0x34bc000 objects/start.o
+                0x00000000f34c8e24                _kernel_end = .
+                0x00000000f34c9000                _data_kmem = ALIGN (0x1000)
+
+.rel.dyn        0x00000000f34c8e24        0x0 load address 0x00000000034c8e24
+ .rel.iplt      0x0000000000000000        0x0 objects/start.o
+
+.data           0x00000000c0000000        0xc load address 0x00000000034c9000
+                0x00000000c0000000                _data_start = ABSOLUTE (.)
+ *(.data)
+ .data          0x00000000c0000000        0x0 objects/CPU.o
+ .data          0x00000000c0000000        0x0 objects/Clocks.o
+ .data          0x00000000c0000000        0x0 objects/DMA.o
+ .data          0x00000000c0000000        0x0 objects/EMMC.o
+ .data          0x00000000c0000000        0x0 objects/Filesystem.o
+ .data          0x00000000c0000000        0x0 objects/GPIO.o
+ .data          0x00000000c0000000        0x4 objects/Graphics.o
+ .data          0x00000000c0000004        0x4 objects/Mailbox.o
+                0x00000000c0000004                mailboxBuffer
+ .data          0x00000000c0000008        0x0 objects/Memory.o
+ .data          0x00000000c0000008        0x0 objects/OS.o
+ .data          0x00000000c0000008        0x0 objects/Power.o
+ .data          0x00000000c0000008        0x0 objects/Timer.o
+ .data          0x00000000c0000008        0x0 objects/UART.o
+ .data          0x00000000c0000008        0x0 objects/USB.o
+ .data          0x00000000c0000008        0x0 objects/Voltage.o
+ .data          0x00000000c0000008        0x0 objects/divmod.o
+ .data          0x00000000c0000008        0x0 objects/main.o
+ .data          0x00000000c0000008        0x4 objects/raspberryPi.o
+ .data          0x00000000c000000c        0x0 objects/string.o
+
+.igot.plt       0x00000000c000000c        0x0 load address 0x00000000034c900c
+ .igot.plt      0x0000000000000000        0x0 objects/start.o
+
+.bss            0x00000000c0004000     0x4410 load address 0x00000000034d0000
+                0x00000000c0004000                _bss_start = ABSOLUTE (.)
+ *(.bss)
+ .bss           0x00000000c0004000     0x4000 objects/CPU.o
+ .bss           0x00000000c0008000        0x0 objects/Clocks.o
+ .bss           0x00000000c0008000      0x100 objects/DMA.o
+                0x00000000c0008000                control_blocks
+ .bss           0x00000000c0008100       0x70 objects/EMMC.o
+ .bss           0x00000000c0008170        0x0 objects/Filesystem.o
+ .bss           0x00000000c0008170        0x0 objects/GPIO.o
+ *fill*         0x00000000c0008170       0x90 
+ .bss           0x00000000c0008200      0x200 objects/Graphics.o
+                0x00000000c0008200                screen_info
+                0x00000000c0008230                frame_buffer_info
+ .bss           0x00000000c0008400        0x0 objects/Mailbox.o
+ .bss           0x00000000c0008400        0x0 objects/Memory.o
+ .bss           0x00000000c0008400        0x0 objects/OS.o
+ .bss           0x00000000c0008400        0x0 objects/Power.o
+ .bss           0x00000000c0008400        0x0 objects/Timer.o
+ .bss           0x00000000c0008400        0x0 objects/UART.o
+ .bss           0x00000000c0008400        0x0 objects/USB.o
+ .bss           0x00000000c0008400        0x0 objects/Voltage.o
+ .bss           0x00000000c0008400        0x0 objects/divmod.o
+ .bss           0x00000000c0008400        0x0 objects/main.o
+ .bss           0x00000000c0008400       0x10 objects/raspberryPi.o
+                0x00000000c0008400                __boardRevision
+ .bss           0x00000000c0008410        0x0 objects/string.o
+                0x00000000c0008410                _bss_end = ABSOLUTE (.)
+                0x00000000034c9000                _physdatastart = (_data_kmem - 0xf0000000)
+                0x00000000034cd000                __bss_start = (_physdatastart + (_bss_start - _data_start))
+                0x00000000034d1410                __bss_end = (_physdatastart + (_bss_end - _data_start))
+LOAD objects/start.o
+LOAD objects/CPU.o
+LOAD objects/Clocks.o
+LOAD objects/DMA.o
+LOAD objects/EMMC.o
+LOAD objects/Filesystem.o
+LOAD objects/GPIO.o
+LOAD objects/Graphics.o
+LOAD objects/Mailbox.o
+LOAD objects/Memory.o
+LOAD objects/OS.o
+LOAD objects/Power.o
+LOAD objects/Timer.o
+LOAD objects/UART.o
+LOAD objects/USB.o
+LOAD objects/Voltage.o
+LOAD objects/divmod.o
+LOAD objects/initsys.o
+LOAD objects/main.o
+LOAD objects/raspberryPi.o
+LOAD objects/string.o
+OUTPUT(kernel.elf elf32-littlearm)
+
+.ARM.attributes
+                0x0000000000000000       0x33
+ .ARM.attributes
+                0x0000000000000000       0x21 objects/start.o
+ .ARM.attributes
+                0x0000000000000021       0x37 objects/initsys.o
+ .ARM.attributes
+                0x0000000000000058       0x37 objects/CPU.o
+ .ARM.attributes
+                0x000000000000008f       0x37 objects/Clocks.o
+ .ARM.attributes
+                0x00000000000000c6       0x37 objects/DMA.o
+ .ARM.attributes
+                0x00000000000000fd       0x37 objects/EMMC.o
+ .ARM.attributes
+                0x0000000000000134       0x37 objects/Filesystem.o
+ .ARM.attributes
+                0x000000000000016b       0x37 objects/GPIO.o
+ .ARM.attributes
+                0x00000000000001a2       0x37 objects/Graphics.o
+ .ARM.attributes
+                0x00000000000001d9       0x37 objects/Mailbox.o
+ .ARM.attributes
+                0x0000000000000210       0x37 objects/Memory.o
+ .ARM.attributes
+                0x0000000000000247       0x37 objects/OS.o
+ .ARM.attributes
+                0x000000000000027e       0x37 objects/Power.o
+ .ARM.attributes
+                0x00000000000002b5       0x37 objects/Timer.o
+ .ARM.attributes
+                0x00000000000002ec       0x37 objects/UART.o
+ .ARM.attributes
+                0x0000000000000323       0x37 objects/USB.o
+ .ARM.attributes
+                0x000000000000035a       0x37 objects/Voltage.o
+ .ARM.attributes
+                0x0000000000000391       0x37 objects/divmod.o
+ .ARM.attributes
+                0x00000000000003c8       0x37 objects/main.o
+ .ARM.attributes
+                0x00000000000003ff       0x37 objects/raspberryPi.o
+ .ARM.attributes
+                0x0000000000000436       0x37 objects/string.o
+
+.comment        0x0000000000000000       0x11
+ .comment       0x0000000000000000       0x11 objects/initsys.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000000       0x12 objects/CPU.o
+ .comment       0x0000000000000000       0x12 objects/Clocks.o
+ .comment       0x0000000000000000       0x12 objects/DMA.o
+ .comment       0x0000000000000000       0x12 objects/EMMC.o
+ .comment       0x0000000000000000       0x12 objects/Filesystem.o
+ .comment       0x0000000000000000       0x12 objects/GPIO.o
+ .comment       0x0000000000000000       0x12 objects/Graphics.o
+ .comment       0x0000000000000000       0x12 objects/Mailbox.o
+ .comment       0x0000000000000000       0x12 objects/Memory.o
+ .comment       0x0000000000000000       0x12 objects/OS.o
+ .comment       0x0000000000000000       0x12 objects/Power.o
+ .comment       0x0000000000000000       0x12 objects/Timer.o
+ .comment       0x0000000000000000       0x12 objects/UART.o
+ .comment       0x0000000000000000       0x12 objects/USB.o
+ .comment       0x0000000000000000       0x12 objects/Voltage.o
+ .comment       0x0000000000000000       0x12 objects/divmod.o
+ .comment       0x0000000000000000       0x12 objects/main.o
+ .comment       0x0000000000000000       0x12 objects/raspberryPi.o
+ .comment       0x0000000000000000       0x12 objects/string.o

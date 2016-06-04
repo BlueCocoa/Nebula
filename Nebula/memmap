@@ -1,0 +1,47 @@
+ENTRY(_start)
+
+MEMORY
+{
+    initsys : ORIGIN = 0x8000, LENGTH = 1M
+    kernel : ORIGIN = 0xf0000000, LENGTH = 64M
+    data : ORIGIN = 0xC0000000, LENGTH = 1M
+}
+
+SECTIONS
+{
+    .init : {
+        objects/start.o(.init* .data* .bss* .rodata*)
+        objects/initsys.o(.text* .data* .bss* .rodata*)
+    } >initsys
+
+    kernel_load = ALIGN(4k);
+
+    .text (kernel_load + 0xF0000000) : AT(kernel_load) {
+        objects/start.o(.high)
+        objects/start.o(.system-wide)
+        *(.text*)
+    } > kernel
+
+    .rodata : {
+        *(.rodata*)
+        _frame_start = ABSOLUTE(.);
+        objects/start.o(.rawdata)
+    } > kernel
+    _kernel_end = .;
+
+    _data_kmem = ALIGN(4k);
+    .data : AT(_data_kmem - 0xF0000000) {
+        _data_start = ABSOLUTE(.);
+        *(.data)
+    } > data
+
+    .bss : {
+        _bss_start = ABSOLUTE(.) ;
+        *(.bss)
+        _bss_end = ABSOLUTE(.) ;
+    } > data
+
+    _physdatastart = _data_kmem - 0xf0000000;
+    __bss_start = _physdatastart + (_bss_start - _data_start);
+    __bss_end = _physdatastart + (_bss_end - _data_start);
+}

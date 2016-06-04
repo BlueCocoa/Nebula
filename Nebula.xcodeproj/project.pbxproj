@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FEC83C181B9F354700309F85 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C171B9F354700309F85 /* main.cpp */; };
+		FEC83C201B9F3C1C00309F85 /* raspberryPi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C1F1B9F3C1C00309F85 /* raspberryPi.cpp */; };
+		FEC83C221B9F3C9200309F85 /* Power.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C211B9F3C9200309F85 /* Power.cpp */; };
+		FEC83C241B9F3D1300309F85 /* Mailbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C231B9F3D1300309F85 /* Mailbox.cpp */; };
+		FEC83C261B9F3EA800309F85 /* GPIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C251B9F3EA800309F85 /* GPIO.cpp */; };
+		FEC83C281B9F3FC900309F85 /* Graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C271B9F3FC900309F85 /* Graphics.cpp */; };
+		FEC83C2A1B9F40EA00309F85 /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C291B9F40EA00309F85 /* Memory.cpp */; };
+		FEC83C2C1B9F459500309F85 /* UART.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C2B1B9F459500309F85 /* UART.cpp */; };
+		FEC83C2F1B9F496E00309F85 /* string.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C2D1B9F496E00309F85 /* string.cpp */; };
+		FEC83C311B9F4AF200309F85 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C301B9F4AF200309F85 /* Timer.cpp */; };
+		FEC83C331B9F4D6600309F85 /* Clocks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C321B9F4D6600309F85 /* Clocks.cpp */; };
+		FEC83C411B9FD25A00309F85 /* start.s in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C401B9FD25A00309F85 /* start.s */; };
+		FEC83C491BA0135F00309F85 /* CPU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C471BA0135F00309F85 /* CPU.cpp */; };
+		FEC83C4C1BA120B700309F85 /* Voltage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C4A1BA120B700309F85 /* Voltage.cpp */; };
+		FEC83C541BA2C37E00309F85 /* USB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C521BA2C37E00309F85 /* USB.cpp */; };
+		FEC83C571BA2E83F00309F85 /* Filesystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C551BA2E83F00309F85 /* Filesystem.cpp */; };
+		FEC83C5A1BA2F54300309F85 /* EMMC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C581BA2F54300309F85 /* EMMC.cpp */; };
+		FEC83C5D1BA3156A00309F85 /* divmod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C5B1BA3156A00309F85 /* divmod.cpp */; };
+		FEC83C5F1BA332F200309F85 /* OS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C5E1BA332F200309F85 /* OS.cpp */; };
+		FEC83C791BA4543800309F85 /* DMA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C771BA4543800309F85 /* DMA.cpp */; };
+		FEC83C9A1BA5573200309F85 /* initsys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEC83C991BA5573200309F85 /* initsys.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FEC83C121B9F354700309F85 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FEC83C141B9F354700309F85 /* Nebula */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Nebula; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEC83C171B9F354700309F85 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		FEC83C1F1B9F3C1C00309F85 /* raspberryPi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = raspberryPi.cpp; sourceTree = "<group>"; };
+		FEC83C211B9F3C9200309F85 /* Power.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Power.cpp; sourceTree = "<group>"; };
+		FEC83C231B9F3D1300309F85 /* Mailbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mailbox.cpp; sourceTree = "<group>"; };
+		FEC83C251B9F3EA800309F85 /* GPIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GPIO.cpp; sourceTree = "<group>"; };
+		FEC83C271B9F3FC900309F85 /* Graphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graphics.cpp; sourceTree = "<group>"; };
+		FEC83C291B9F40EA00309F85 /* Memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Memory.cpp; sourceTree = "<group>"; };
+		FEC83C2B1B9F459500309F85 /* UART.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UART.cpp; sourceTree = "<group>"; };
+		FEC83C2D1B9F496E00309F85 /* string.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = string.cpp; sourceTree = "<group>"; };
+		FEC83C2E1B9F496E00309F85 /* string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = string.h; sourceTree = "<group>"; };
+		FEC83C301B9F4AF200309F85 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
+		FEC83C321B9F4D6600309F85 /* Clocks.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Clocks.cpp; sourceTree = "<group>"; };
+		FEC83C401B9FD25A00309F85 /* start.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = start.s; sourceTree = "<group>"; };
+		FEC83C451B9FE5AC00309F85 /* fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fonts.h; sourceTree = "<group>"; };
+		FEC83C461B9FFBAC00309F85 /* imageData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imageData.h; sourceTree = "<group>"; };
+		FEC83C471BA0135F00309F85 /* CPU.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPU.cpp; sourceTree = "<group>"; };
+		FEC83C4A1BA120B700309F85 /* Voltage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Voltage.cpp; sourceTree = "<group>"; };
+		FEC83C4F1BA2999100309F85 /* start.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = start.h; sourceTree = "<group>"; };
+		FEC83C501BA2B46D00309F85 /* memmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = memmap; sourceTree = "<group>"; };
+		FEC83C511BA2C10700309F85 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		FEC83C521BA2C37E00309F85 /* USB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = USB.cpp; sourceTree = "<group>"; };
+		FEC83C551BA2E83F00309F85 /* Filesystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Filesystem.cpp; sourceTree = "<group>"; };
+		FEC83C581BA2F54300309F85 /* EMMC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EMMC.cpp; sourceTree = "<group>"; };
+		FEC83C5B1BA3156A00309F85 /* divmod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = divmod.cpp; sourceTree = "<group>"; };
+		FEC83C5E1BA332F200309F85 /* OS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OS.cpp; sourceTree = "<group>"; };
+		FEC83C771BA4543800309F85 /* DMA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DMA.cpp; sourceTree = "<group>"; };
+		FEC83C7C1BA5115300309F85 /* pi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pi.h; path = include/raspberrypi/pi.h; sourceTree = "<group>"; };
+		FEC83C7F1BA512A600309F85 /* raspberryPi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = raspberryPi.h; path = include/raspberrypi/raspberryPi.h; sourceTree = "<group>"; };
+		FEC83C801BA512B600309F85 /* CPU.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CPU.h; path = include/raspberrypi/CPU.h; sourceTree = "<group>"; };
+		FEC83C811BA512BF00309F85 /* Memory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Memory.h; path = include/raspberrypi/Memory.h; sourceTree = "<group>"; };
+		FEC83C821BA512C700309F85 /* Graphics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Graphics.h; path = include/raspberrypi/Graphics.h; sourceTree = "<group>"; };
+		FEC83C831BA512CF00309F85 /* Clocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Clocks.h; path = include/raspberrypi/Clocks.h; sourceTree = "<group>"; };
+		FEC83C841BA512D600309F85 /* DMA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DMA.h; path = include/raspberrypi/DMA.h; sourceTree = "<group>"; };
+		FEC83C851BA512DD00309F85 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Timer.h; path = include/raspberrypi/Timer.h; sourceTree = "<group>"; };
+		FEC83C861BA512E500309F85 /* Mailbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Mailbox.h; path = include/raspberrypi/Mailbox.h; sourceTree = "<group>"; };
+		FEC83C871BA512EC00309F85 /* GPIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GPIO.h; path = include/raspberrypi/GPIO.h; sourceTree = "<group>"; };
+		FEC83C881BA512F300309F85 /* UART.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UART.h; path = include/raspberrypi/UART.h; sourceTree = "<group>"; };
+		FEC83C891BA512FC00309F85 /* EMMC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EMMC.h; path = include/raspberrypi/EMMC.h; sourceTree = "<group>"; };
+		FEC83C8A1BA5131800309F85 /* arch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = arch.h; path = include/architecture/arch.h; sourceTree = "<group>"; };
+		FEC83C8C1BA5136A00309F85 /* Power.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Power.h; path = include/raspberrypi/Power.h; sourceTree = "<group>"; };
+		FEC83C8E1BA5159D00309F85 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = types.h; path = include/sys/types.h; sourceTree = "<group>"; };
+		FEC83C911BA5174F00309F85 /* extern.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = extern.h; path = include/extern.h; sourceTree = "<group>"; };
+		FEC83C921BA5183200309F85 /* Voltage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Voltage.h; path = include/raspberrypi/Voltage.h; sourceTree = "<group>"; };
+		FEC83C931BA518F900309F85 /* USB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = USB.h; path = include/raspberrypi/USB.h; sourceTree = "<group>"; };
+		FEC83C941BA51A3000309F85 /* Filesystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Filesystem.h; path = include/raspberrypi/Filesystem.h; sourceTree = "<group>"; };
+		FEC83C991BA5573200309F85 /* initsys.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = initsys.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FEC83C111B9F354700309F85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FEC83C0B1B9F354700309F85 = {
+			isa = PBXGroup;
+			children = (
+				FEC83C161B9F354700309F85 /* Nebula */,
+				FEC83C151B9F354700309F85 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FEC83C151B9F354700309F85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FEC83C141B9F354700309F85 /* Nebula */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FEC83C161B9F354700309F85 /* Nebula */ = {
+			isa = PBXGroup;
+			children = (
+				FEC83C511BA2C10700309F85 /* Makefile */,
+				FEC83C501BA2B46D00309F85 /* memmap */,
+				FEC83C7D1BA5128700309F85 /* include */,
+				FEC83C951BA51B9B00309F85 /* raspberrypi */,
+				FEC83C451B9FE5AC00309F85 /* fonts.h */,
+				FEC83C461B9FFBAC00309F85 /* imageData.h */,
+				FEC83C4F1BA2999100309F85 /* start.h */,
+				FEC83C5E1BA332F200309F85 /* OS.cpp */,
+				FEC83C171B9F354700309F85 /* main.cpp */,
+				FEC83C2D1B9F496E00309F85 /* string.cpp */,
+				FEC83C2E1B9F496E00309F85 /* string.h */,
+			);
+			path = Nebula;
+			sourceTree = "<group>";
+		};
+		FEC83C7D1BA5128700309F85 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				FEC83C8B1BA5131C00309F85 /* architecture */,
+				FEC83C911BA5174F00309F85 /* extern.h */,
+				FEC83C7E1BA5128F00309F85 /* raspberrypi */,
+				FEC83C8F1BA515B200309F85 /* sys */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		FEC83C7E1BA5128F00309F85 /* raspberrypi */ = {
+			isa = PBXGroup;
+			children = (
+				FEC83C7C1BA5115300309F85 /* pi.h */,
+				FEC83C7F1BA512A600309F85 /* raspberryPi.h */,
+				FEC83C801BA512B600309F85 /* CPU.h */,
+				FEC83C941BA51A3000309F85 /* Filesystem.h */,
+				FEC83C821BA512C700309F85 /* Graphics.h */,
+				FEC83C811BA512BF00309F85 /* Memory.h */,
+				FEC83C8C1BA5136A00309F85 /* Power.h */,
+				FEC83C931BA518F900309F85 /* USB.h */,
+				FEC83C921BA5183200309F85 /* Voltage.h */,
+				FEC83C831BA512CF00309F85 /* Clocks.h */,
+				FEC83C841BA512D600309F85 /* DMA.h */,
+				FEC83C851BA512DD00309F85 /* Timer.h */,
+				FEC83C861BA512E500309F85 /* Mailbox.h */,
+				FEC83C871BA512EC00309F85 /* GPIO.h */,
+				FEC83C881BA512F300309F85 /* UART.h */,
+				FEC83C891BA512FC00309F85 /* EMMC.h */,
+			);
+			name = raspberrypi;
+			sourceTree = "<group>";
+		};
+		FEC83C8B1BA5131C00309F85 /* architecture */ = {
+			isa = PBXGroup;
+			children = (
+				FEC83C8A1BA5131800309F85 /* arch.h */,
+			);
+			name = architecture;
+			sourceTree = "<group>";
+		};
+		FEC83C8F1BA515B200309F85 /* sys */ = {
+			isa = PBXGroup;
+			children = (
+				FEC83C8E1BA5159D00309F85 /* types.h */,
+			);
+			name = sys;
+			sourceTree = "<group>";
+		};
+		FEC83C951BA51B9B00309F85 /* raspberrypi */ = {
+			isa = PBXGroup;
+			children = (
+				FEC83C401B9FD25A00309F85 /* start.s */,
+				FEC83C991BA5573200309F85 /* initsys.cpp */,
+				FEC83C5B1BA3156A00309F85 /* divmod.cpp */,
+				FEC83C1F1B9F3C1C00309F85 /* raspberryPi.cpp */,
+				FEC83C471BA0135F00309F85 /* CPU.cpp */,
+				FEC83C551BA2E83F00309F85 /* Filesystem.cpp */,
+				FEC83C271B9F3FC900309F85 /* Graphics.cpp */,
+				FEC83C291B9F40EA00309F85 /* Memory.cpp */,
+				FEC83C211B9F3C9200309F85 /* Power.cpp */,
+				FEC83C521BA2C37E00309F85 /* USB.cpp */,
+				FEC83C4A1BA120B700309F85 /* Voltage.cpp */,
+				FEC83C321B9F4D6600309F85 /* Clocks.cpp */,
+				FEC83C771BA4543800309F85 /* DMA.cpp */,
+				FEC83C301B9F4AF200309F85 /* Timer.cpp */,
+				FEC83C231B9F3D1300309F85 /* Mailbox.cpp */,
+				FEC83C251B9F3EA800309F85 /* GPIO.cpp */,
+				FEC83C2B1B9F459500309F85 /* UART.cpp */,
+				FEC83C581BA2F54300309F85 /* EMMC.cpp */,
+			);
+			name = raspberrypi;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FEC83C131B9F354700309F85 /* Nebula */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEC83C1B1B9F354700309F85 /* Build configuration list for PBXNativeTarget "Nebula" */;
+			buildPhases = (
+				FEC83C101B9F354700309F85 /* Sources */,
+				FEC83C111B9F354700309F85 /* Frameworks */,
+				FEC83C121B9F354700309F85 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nebula;
+			productName = Nebula;
+			productReference = FEC83C141B9F354700309F85 /* Nebula */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FEC83C0C1B9F354700309F85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = 0xBBC;
+				TargetAttributes = {
+					FEC83C131B9F354700309F85 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = FEC83C0F1B9F354700309F85 /* Build configuration list for PBXProject "Nebula" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FEC83C0B1B9F354700309F85;
+			productRefGroup = FEC83C151B9F354700309F85 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FEC83C131B9F354700309F85 /* Nebula */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FEC83C101B9F354700309F85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEC83C241B9F3D1300309F85 /* Mailbox.cpp in Sources */,
+				FEC83C221B9F3C9200309F85 /* Power.cpp in Sources */,
+				FEC83C4C1BA120B700309F85 /* Voltage.cpp in Sources */,
+				FEC83C541BA2C37E00309F85 /* USB.cpp in Sources */,
+				FEC83C5D1BA3156A00309F85 /* divmod.cpp in Sources */,
+				FEC83C571BA2E83F00309F85 /* Filesystem.cpp in Sources */,
+				FEC83C2A1B9F40EA00309F85 /* Memory.cpp in Sources */,
+				FEC83C331B9F4D6600309F85 /* Clocks.cpp in Sources */,
+				FEC83C311B9F4AF200309F85 /* Timer.cpp in Sources */,
+				FEC83C181B9F354700309F85 /* main.cpp in Sources */,
+				FEC83C411B9FD25A00309F85 /* start.s in Sources */,
+				FEC83C201B9F3C1C00309F85 /* raspberryPi.cpp in Sources */,
+				FEC83C9A1BA5573200309F85 /* initsys.cpp in Sources */,
+				FEC83C491BA0135F00309F85 /* CPU.cpp in Sources */,
+				FEC83C5F1BA332F200309F85 /* OS.cpp in Sources */,
+				FEC83C791BA4543800309F85 /* DMA.cpp in Sources */,
+				FEC83C2C1B9F459500309F85 /* UART.cpp in Sources */,
+				FEC83C5A1BA2F54300309F85 /* EMMC.cpp in Sources */,
+				FEC83C2F1B9F496E00309F85 /* string.cpp in Sources */,
+				FEC83C281B9F3FC900309F85 /* Graphics.cpp in Sources */,
+				FEC83C261B9F3EA800309F85 /* GPIO.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FEC83C191B9F354700309F85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FEC83C1A1B9F354700309F85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FEC83C1C1B9F354700309F85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Nebula/include/";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FEC83C1D1B9F354700309F85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Nebula/include/";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FEC83C0F1B9F354700309F85 /* Build configuration list for PBXProject "Nebula" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEC83C191B9F354700309F85 /* Debug */,
+				FEC83C1A1B9F354700309F85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEC83C1B1B9F354700309F85 /* Build configuration list for PBXNativeTarget "Nebula" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEC83C1C1B9F354700309F85 /* Debug */,
+				FEC83C1D1B9F354700309F85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FEC83C0C1B9F354700309F85 /* Project object */;
+}
